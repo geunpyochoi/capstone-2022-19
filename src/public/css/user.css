@@ -1,16 +1,13 @@
 /* Copyright (c) 2022 by Aigars Silkalns (https://codepen.io/colorlib/pen/rxddKy) */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-.logo{
-  margin-top : 30px;
-}
 .title {
   font-family: "Roboto", sans-serif;
   color: #FFFFFF;
   font-size : 25px;
 }
-.login-page {
-  width: 360px;
+.user-page {
+  width: 720px;
   padding: 8% 0 0;
   margin: auto;
 }
@@ -18,11 +15,11 @@
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
+  max-width: 720px;
   margin: -100px auto 100px;
   padding: 45px;
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form .txt {
   font-family: "Roboto", sans-serif;
@@ -48,7 +45,10 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form #button {
+.form #video{
+  display: none;
+}
+.form #student {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -63,17 +63,26 @@
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form #button:hover,.form #button:active,.form #button:focus {
+.form #student:hover,.form #student:active,.form #student:focus {
   background: #43A047;
 }
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
+.form #eyeTracking {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 80%;
+  border: 0;
+  margin: 0 auto;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
+.form #eyeTracking:hover,.form #eyeTracking:active,.form #eyeTracking:focus {
+  background: #43A047;
 }
 .container {
   position: relative;

@@ -11,9 +11,11 @@ let iceServers = {
 const localvideo = document.getElementById("localvideo");
 const screenSharevideo = document.getElementById("screen-share");
 const streams = document.getElementById("streams");
-const btnProfessor = document.getElementById("professor");
 const btnStudent = document.getElementById("student");
-
+const video = document.getElementById('video');
+const eye = document.getElementById("eyeTracking");
+const txt = document.getElementById("welcome");
+const form = document.getElementsByClassName("form");
 
 let sendPC;
 let myStream;
@@ -22,6 +24,15 @@ let index;
 let tmp;
 
 btnStudent.addEventListener("click", handleStudentBtn);
+
+function visible(){
+  video.style.display = "block";
+  btnStudent.style.display = "none";
+  eye.style.display = "none";
+  txt.style.display = "none";
+  document.getElementByClassName("form")[0].style.width = "720px";
+  document.getElementByClassName("form")[0].style.height = "360px";
+}
 
 function handleStudentBtn(event) {
     console.log("StudentBtn click");

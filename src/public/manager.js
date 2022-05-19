@@ -10,15 +10,18 @@ let iceServers = {
 const localvideo = document.getElementById("localvideo");
 const streams = document.getElementById("streams");
 const btnProfessor = document.getElementById("professor");
-const btnStudent = document.getElementById("student");
-
+const video = document.getElementById("localvideo");
+const welcome = document.getElementById("welcome");
 let receivePC;
 let myStream;
 
 
 btnProfessor.addEventListener("click", handleProfessorBtn);
 
-
+function visible(){
+  welcome.style.display = "none";
+  btnProfessor.style.display = "none";
+}
 function handleProfessorBtn(event) {
     console.log("ProfessorBtn click");
     roomId = '1';
@@ -77,8 +80,8 @@ function handleAddStream(data) {
     console.log("동영상 띄운다!");
     const streams = document.getElementById("streams");
     const peerStream = document.createElement("video");
-    peerStream.width = "400";
-    peerStream.height = "400";
+    peerStream.width = "300";
+    peerStream.height = "350";
     peerStream.autoplay = true;
     peerStream.playsinline = true;
     peerStream.srcObject = data.stream;

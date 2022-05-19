@@ -5,23 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OnGamDock-student</title>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <link rel="stylesheet" href="/public/css/user.css">
     
 </head>
 <body>
-    <header>ONGAMDOCK</header>
-    <main>
-        <div>
-            <video id="localvideo" autoplay playsinline width="400" height="400 muted"></video>
-            <video id="screen-share" autoplay playsinline width="400" height="400 muted"></video>
+  <div class = "logo"style ="text-align:center">
+
+  <img src= "../public/logo.png" alt = "Logo"style="float: center" width="200"height="200"/> 
+    <header class = "title">ONGAMDOCK</header> </div>
+    <div class = "user-page">
+      <div class = "form">
+        
+        <form class="user-form">
+              <div id = 'welcome'>
+              <p> 반갑습니다.
+              <p> xxx님.
+                <hr>
+              </div>
+            <div id = "video">
+            
+            <video id="localvideo" autoplay playsinline width="200" height="200 muted"></video>
+            <video id="screen-share" autoplay playsinline width="200" height="200 muted"></video>
+          </div>
+          <div id="streams"></div>
+        <div id = >
+            <p id="student"  onclick = "visible()">입장하기</p>
+          <br>
+            <p id="eyeTracking" onClick="location.href='eyeTracking'">EyeTracking</p>
         </div>
-        <div id="streams"></div>
-        <div>
-            <button id="student">student</button>
-            <button id="professor">professor</button>
-            <button id="eyeTracking" onClick="location.href='eyeTracking'">eyeTracking</button>
+              
+              </form>
+              
+          </div>
         </div>
-    </main>
+        
 
 
     
