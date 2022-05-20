@@ -1,48 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html id="home" lang="en">
+    <head>
+       <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OnGamDock-student</title>
     <link rel="stylesheet" href="/public/css/user.css">
-    
-</head>
-<body>
-  <div class = "logo"style ="text-align:center">
 
-  <img src= "../public/logo.png" alt = "Logo"style="float: center" width="200"height="200"/> 
-    <header class = "title">ONGAMDOCK</header> </div>
-    <div class = "user-page">
-      <div class = "form">
-        
-        <form class="user-form">
-              <div id = 'welcome'>
-              <p> 반갑습니다.
-              <p> xxx님.
-                <hr>
-              </div>
-            <div id = "video">
-            
-            <video id="localvideo" autoplay playsinline width="200" height="200 muted"></video>
-            <video id="screen-share" autoplay playsinline width="200" height="200 muted"></video>
-          </div>
-          <div id="streams"></div>
-        <div id = >
-            <p id="student"  onclick = "visible()">입장하기</p>
-          <br>
-            <p id="eyeTracking" onClick="location.href='eyeTracking'">EyeTracking</p>
-        </div>
-              
-              </form>
-              
-          </div>
-        </div>
-        
+    </head>
 
+    <body>
+        <article style="background-color:#eff0f2">
+            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+            </script>
 
-    
-    <script src="/socket.io/socket.io.js"></script>
+            <table id="rooms-list" class="visible" style="color:white;"></table>
+
+            <div class=non-visual><!--invisiable in homepage-->
+                <div class="modal"></div>
+                <div class="pop-up">
+                    <div style="margin-top:10%; color:black; font-size:2.5rem; font-weight: bold;">미팅을 종료하시겠습니까?</div>
+                    <button class="exit_btn" onclick="exit_yes()">네</button>
+                    <button class="exit_btn" onclick="exit_no()">아니오</button>
+                </div>
+                <div class="wrapper"><!--grid UI-->
+                    
+                    <div id="ale" class="as">
+                        <h3 style="padding: 5%; color: #ffffff;">알림창</h3>
+                        <div class="ale_area" style="height:90%; overFlow-y : scroll; text-align: left;">
+                            <div ></div>
+                        </div>
+                    </div>
+                    <div class=content style = "overFlow-y : scroll"><!--remote video-->
+                        <div class="left_nav">
+                            <button id="exit" class="basicBtns" onclick="exitRoom()"><i class="fas fa-sign-out-alt"></i></button><!--exit peer connection func bnt-->
+
+                        </div>
+                      
+                        <div class="dialog_area"></div>
+                      <div class = "videos">
+                        <video id="localvideo" autoplay playsinline width="300" height="300 muted"></video>
+            <video id="screen-share" autoplay playsinline width="300" height="350 muted"></video></div>
+                    </div>
+                  <p id="student" onclick = "visible()">입장하기</p>
+                    <div id="whiteBoard">
+                        <input type="button" id="exitCanvas" class="canvasUI" value="x" onclick="hideWhiteBoard()" />
+                        <canvas id="canvas" class="canvasUI"></canvas>
+                        <div id="canvasBtns" class="canvasUI">
+                        
+                        <button id="jsMode" class="canvasBtns">Paint</button>
+                        <button id="jsErase" class="canvasBtns">Erase</button>
+                        <button id="redpen" class="canvasBtns">Redpen</button>
+                        <button id="reset" class="canvasBtns">Reset</button>
+                        <input
+                            type="range"
+                            name=""
+                            id="jsRange"
+                            min="0.1"
+                            max="10.0"
+                            value="5.0"
+                            step="0.1"
+                        />
+                        </div>
+                    </div>
+                    
+                    <!-- <div id=hiddenChat style="display: none;">
+                        <button class="chatOnBtn" onclick="chatOn()" ><i class="fas fa-eye"></i></button>
+                    </div> -->
+                    <div id=chat style="overflow: hidden;">
+                        <div class="massage_area" style="height:87%; overFlow-y : scroll;">
+                            <div style="text-align: right;"></div>
+                        </div>
+                        <div class="text_input_area">
+                            <input type="text" id="chat_message"></input><button id="send_btn" onclick="sand_chat()" style="background-image: 
+                            radial-gradient(ellipse farthest-corner at 0 140%, #5d9dff 0%, #8bc7ff 70%, #9ED0FE 70%);">전송</button>
+                        </div>
+                    </div>
+                </div>
+
+            <script src="/socket.io/socket.io.js"></script>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="/public/user.js"></script>
     <script src="/public/TRIANGULATION.js"></script>
@@ -61,5 +97,6 @@
     <script src="https://unpkg.com/@tensorflow-models/face-landmarks-detection@0.0.1/dist/face-landmarks-detection.js"></script>
     <!--<script src="https://unpkg.com/@tensorflow-models/face-landmarks-detection/dist/face-landmarks-detection.js"></script>-->
     <script src="/public/ui.js"></script>
-</body>
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+    </body>
 </html>
