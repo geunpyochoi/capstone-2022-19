@@ -43,7 +43,7 @@ body,html{
 }
 
 .ale_area{
-  border: 2px solid #9ED0FE;
+  border: 2px solid #a9e08b;
   border-radius: 6px;
   background-color: #ffffff;
 }
@@ -160,7 +160,7 @@ grid-row: 1 / 4;
 position: relative;
 text-align: center;
 background-image: 
-  radial-gradient(ellipse farthest-corner at 0 140%, #5d9dff 0%, #8bc7ff 70%, #9ED0FE 70%);
+  radial-gradient(ellipse farthest-corner at 0 140%, #b4e29b 0%, #7dd84c 70%, #a9e08b 70%);
 max-width: 250px;
 }
 
@@ -180,7 +180,7 @@ z-index: 0;
 #chat{ /*chatting area*/
 grid-column: 4;
 grid-row: 2 / 4 ;
-background: linear-gradient( 45deg, #cde7ff, aliceblue );
+background: linear-gradient( 45deg, rgb(209, 231, 197), aliceblue );
 /* background-image: radial-gradient(ellipse farthest-corner at 0 140%, #cde7ff 0%, #daedff 70%, aliceblue 70%); */
 text-align: center;
 justify-items: center;
@@ -278,7 +278,7 @@ color : black;
 
 /*---other button setting---*/
 .basicBtns{
-background-color: rgba(255,255,255,0);
+background-color: #a9e08b;
 border: none;
 width: 40px;
 text-decoration: none;
@@ -298,7 +298,7 @@ width: fit-content;
 margin-top : 10px;
 margin-left : 10px;
 overflow: hidden;
-background: linear-gradient( 45deg, #7cc0ff, #9ED0FE );
+background: #a9e08b;
 z-index: 1100;
 position: relative;
 opacity: 0.9;
@@ -807,7 +807,7 @@ display:none;
 }
 
 .exit_btn{
-background: linear-gradient(162deg, #9ED0FE 0%, #87c5ff 50%, #4faaff 100%);
+background: linear-gradient(162deg, #9ED0FE 0%, #87c5ff 50%, #a9e08b 70%);
 display: inline-block;
 position: relative;
 width: 80px;

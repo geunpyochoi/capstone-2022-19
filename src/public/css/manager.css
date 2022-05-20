@@ -37,13 +37,13 @@ body,html{
   color:white;
 }
 .parti_area{
-  border: 2px solid #9ED0FE;
+  border: 2px solid #a9e08b;
   border-radius: 6px;
   background-color: #ffffff;
 }
 
 .ale_area{
-  border: 2px solid #9ED0FE;
+  border: 2px solid #a9e08b;
   border-radius: 6px;
   background-color: #ffffff;
 }
@@ -151,7 +151,7 @@ grid-column: 1;
 grid-row: 1 / 2;
 text-align: center;
 background-image: 
-  radial-gradient(ellipse farthest-corner at 0 140%, #5d9dff 0%, #8bc7ff 70%, #9ED0FE 70%);
+  radial-gradient(ellipse farthest-corner at 0 140%, #b4e29b 0%, #7dd84c 70%, #a9e08b 70%);
 }
 
 #ale{ /*알림창*/
@@ -160,7 +160,7 @@ grid-row: 2 / 4;
 position: relative;
 text-align: center;
 background-image: 
-  radial-gradient(ellipse farthest-corner at 0 140%, #5d9dff 0%, #8bc7ff 70%, #9ED0FE 70%);
+  radial-gradient(ellipse farthest-corner at 0 140%, #b4e29b 0%, #7dd84c 70%, #a9e08b 70%);
 max-width: 250px;
 }
 
@@ -187,7 +187,7 @@ justify-self: stretch;
 #chat{ /*chatting area*/
 grid-column: 4;
 grid-row: 2 / 4 ;
-background: linear-gradient( 45deg, #cde7ff, aliceblue );
+background: linear-gradient( 45deg, rgb(209, 231, 197), aliceblue );
 /* background-image: radial-gradient(ellipse farthest-corner at 0 140%, #cde7ff 0%, #daedff 70%, aliceblue 70%); */
 text-align: center;
 justify-items: center;
@@ -214,17 +214,6 @@ text-align: center;
 font-size: 20px;
 }
 
-/* .peer_video{
-position: absolute;
-overflow: hidden;
-max-height: var(--rowHeight);
-max-width: var(--colWidth);
-} */
-
-/* #local_video{
-max-width: 400px;
-max-height: 300px;
-} */
 
 .name{
 font-size: calc(2*var(--font_num));
@@ -296,7 +285,7 @@ color : black;
 
 /*---other button setting---*/
 .basicBtns{
-background-color: rgba(255,255,255,0);
+background-color: #a9e08b;
 border: none;
 width: 40px;
 text-decoration: none;
@@ -310,26 +299,13 @@ color: black;
 #conc {
 font-size: 18px;
 }
-.navbar {
-width: 550px;
-left:50%; 
-margin-top: -40px;
-margin-left : -275px;
-overflow: hidden;
-background: linear-gradient( 45deg, #7cc0ff, #9ED0FE );
-z-index: 1100;
-position: relative;
-opacity: 0.9;
-border-radius: 7px;
-text-align: center;
-}
 
 .left_nav { 
 width: fit-content;
 margin-top : 10px;
 margin-left : 10px;
 overflow: hidden;
-background: linear-gradient( 45deg, #7cc0ff, #9ED0FE );
+background: linear-gradient( 45deg, #7dd84c, #a9e08b );
 z-index: 1100;
 position: relative;
 opacity: 0.9;
