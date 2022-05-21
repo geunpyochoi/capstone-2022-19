@@ -10,6 +10,30 @@
     </head>
 
     <body>
+      <div id = "page1"><div class = "logo"style ="text-align:center">
+
+  <img src= "../public/logo.png" alt = "Logo"style="float: center" width="200"height="200"/> 
+    <header class = "title">ONGAMDOCK</header> </div>
+    <div class = "user-page">
+      <div class = "form">
+        
+        <form class="user-form">
+              <div id = 'welcome'>
+              <p> 반갑습니다.
+              <p> xxx님.
+                <hr>
+              </div>
+          <div id="streams"></div>
+        <div>
+            <p id="student"  onclick = "visible()">입장하기</p>
+          <br>
+        </div>
+              
+              </form>
+              
+          </div>
+        </div></div>
+      <div id = "page2" style=" display : none">
         <article style="background-color:#eff0f2">
             <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
             </script>
@@ -42,7 +66,10 @@
                         <video id="localvideo" autoplay playsinline width="300" height="300 muted"></video>
             <video id="screen-share" autoplay playsinline width="300" height="350 muted"></video></div>
                     </div>
-                  <p id="Student" onclick = "visible()">입장하기</p>
+                    <div id = "user_info">
+                      <p>구분 : 학생</p>
+                      <p>이름 : </p>
+                    </div>
                     <div id="whiteBoard">
                         <input type="button" id="exitCanvas" class="canvasUI" value="x" onclick="hideWhiteBoard()" />
                         <canvas id="canvas" class="canvasUI"></canvas>
@@ -77,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-
+      </div>
             <script src="/socket.io/socket.io.js"></script>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="/public/user.js"></script>

@@ -16,6 +16,8 @@ const video = document.getElementById('video');
 const eye = document.getElementById("eyeTracking");
 const txt = document.getElementById("welcome");
 const form = document.getElementsByClassName("form");
+const page1 = document.getElementById("page1");
+const page2 = document.getElementById("page2");
 
 let sendPC;
 let myStream;
@@ -26,14 +28,9 @@ let tmp;
 btnStudent.addEventListener("click", handleStudentBtn);
 
 function visible(){
-  video.style.display = "block";
-  btnStudent.style.display = "none";
-  eye.style.display = "none";
-  txt.style.display = "none";
-  document.getElementByClassName("form")[0].style.width = "720px";
-  document.getElementByClassName("form")[0].style.height = "360px";
+  page1.style.display = "none";
+  page2.style.display = "block";
 }
-
 function handleStudentBtn(event) {
     console.log("StudentBtn click");
     roomId = '1';
