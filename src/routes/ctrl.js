@@ -15,23 +15,32 @@ const output = {
     home: (req, res) => {
         res.redirect("login");
     },
+    
     login: (req, res) => {
         if (req.session.isLogined === undefined) {
             res.render("login");
         } else if (req.session.isLogined) {
+            const userInfo = {
+                name: req.session.userInfo.name,
+                type: req.session.userInfo.type
+            }
             if (req.session.userInfo.type === "student") {
-                res.render("user");
+                res.render("user", { userInfo: userInfo, error: false });
             } else {
-                res.render("manager");
+                res.render("manager", { userInfo: userInfo, error: false });
             }
         }
     },
     user: (req, res) => {
         if (req.session.isLogined === true) {
+            const userInfo = {
+                name: req.session.userInfo.name,
+                type: req.session.userInfo.type
+            }
             if (req.session.userInfo.type === "student") {
-                res.render("user");
+                res.render("user", { userInfo: userInfo, error: false });
             } else if (req.session.userInfo.type === "professor") {
-                res.render("manager")
+                res.render("manager", { userInfo: userInfo, error: false })
             } else {
                 res.render("login");
             }
@@ -42,10 +51,14 @@ const output = {
     },
     manager: (req, res) => {
         if (req.session.isLogined === true) {
+            const userInfo = {
+                name: req.session.userInfo.name,
+                type: req.session.userInfo.type
+            }
             if (req.session.userInfo.type === "professor") {
-                res.render("manager");
+                res.render("manager", { userInfo: userInfo, error: false });
             } else if (req.session.userInfo.type === "student") {
-                res.render("user")
+                res.render("user", { userInfo: userInfo, error: false })
             } else {
                 res.render("login");
             }
@@ -55,9 +68,13 @@ const output = {
     },
 
     register: (req, res) => {
-        res.render("register")
+        res.render("register");
     },
 
+    exit: (req, res) =>{
+        req.session.destroy(function(err){});
+        res.render("endpage");
+    },
 
     eyeTracking: (req, res) => {
         res.render("eyeTracking");
@@ -200,11 +217,6 @@ const process = {
 
 
     },
-
-
-    session: (req, res) => {
-        res.resder("user");
-    }
 
 };
 

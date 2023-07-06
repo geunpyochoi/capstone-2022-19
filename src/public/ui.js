@@ -1,74 +1,60 @@
 
 let model ; 
-let i= -1;
-let isStop = false;
-let playing ;
-let timeValue;
-    async function runModel(){
-    model = await faceLandmarksDetection.load(faceLandmarksDetection.SupportedPackages.mediapipeFacemesh);
-    }
-    runModel();
 
-    async function checkscore(localvideo, roomId){
-       
-        const face =  await model.estimateFaces({
-            input:localvideo,
-            returnTensors: false,
-            flipHorizontal: false,
-            predictIrises: true
+async function runModel(){
+model = await faceLandmarksDetection.load(faceLandmarksDetection.SupportedPackages.mediapipeFacemesh);
+}
+runModel();
 
-        });
-    
-        facePoint(face);
-        //const ctx = canvasRef.current.getContext("2d");
-        //requestAnimationFrame(()=>{drawMesh(face, ctx)});
-    
-    }
-    async function initialTest(localvideo){
-        const face =  await model.estimateFaces({
-            input:localvideo,
-            returnTensors: false,
-            flipHorizontal: false,
-            predictIrises: true
-        });
-         let value=await verification(face);
-         return value
-    }
-    
-        
-    const runcheckscore = (localvideo, roomId) => {
-     
-        setInterval(() => {checkscore(localvideo, roomId);}, 100);
-    }
+async function checkscore(localvideo, roomId){
+   
+    const face =  await model.estimateFaces({
+        input:localvideo,
+        returnTensors: false, //default
+        flipHorizontal: false,
+        predictIrises: true // default
+    });
 
-    async function runInitialTest(localvideo){
+    facePoint(face);
+    //const ctx = canvasRef.current.getContext("2d");
+    //requestAnimationFrame(()=>{drawMesh(face, ctx)});
+
+}
+async function initialTest(localvideo){
+   
+    const face = await model.estimateFaces({
+        input:localvideo,
+        flipHorizontal: false
   
-        let time = 1;
-      
-        timeValue= setInterval(() => {
-                console.log(time);
+    });
+     let value = await verification(face);
+
+}
+
+    
+const runcheckscore = (localvideo, roomId) => {
+    setInterval(() => {checkscore(localvideo, roomId);}, 1000);
+}
+
+async function runInitialTest(localvideo){
+    let j = 0;
+    let timeValue= setInterval(() => {
+            if(j == 50){
+                console.log(j);
+                clearInterval(timeValue);
+                inputAnimal();
+             }
+             else{
+                 console.log(j);
                 initialTest(localvideo);
-                time= time -1;
-                if (time <=0){
-                    clearInterval(timeValue);
-                    let retValue = returnValue();
-                    console.log(retValue);
-                    console.log(retValue[i=i+1]);
-                    console.log(retValue[i=i+1]);
-                  
-                }
-                
-        }, 100);
-    }
+                j++;
+             }
+              }, 100);
 
-    /*
-    localvideo.onloadeddata = function(){
-        //runcheckscore(localvideo, tmp);
-        runInitialTest(localvideo, tmp);
-        setTimeout(function(){
-            runcheckscore(localvideo, tmp)
-        }, 20000);
-    }
-    */
+}
+/*
+localvideo.onloadeddata = function(){
+    
+}
 
-
+*/
