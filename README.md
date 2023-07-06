@@ -1,6 +1,7 @@
       
 # On-감독  
-<img src="src/public/logo.png">
+![logo](https://github.com/geunpyochoi/sw-project/assets/28581469/1784f31c-077c-48a6-8e73-cec8abdbbceb)
+
 
 ---------------------------------------  
 ### 1. 프로젝트 소개
