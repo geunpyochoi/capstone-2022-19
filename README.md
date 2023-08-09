@@ -1,6 +1,6 @@
       
 # On-감독  
-![logo](https://github.com/geunpyochoi/sw-project/assets/28581469/1784f31c-077c-48a6-8e73-cec8abdbbceb)
+![logo](https://github.com/geunpyochoi/Algorithm/assets/28581469/ae8f90b3-d4db-4257-a65a-b8d13bf1c736)
 
 
 ---------------------------------------  
